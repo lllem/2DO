@@ -1,7 +1,14 @@
 <template>
-  <h1 class="font-bold text-2xl text-center my-6 flex items-start justify-center">Задачи <span class="text-sm inline-block text-white bg-indigo-400 rounded-3xl px-2">{{ tasks.length }}</span></h1>
+  <h1
+  class="font-bold text-2xl text-center my-6 flex items-start justify-center"
+  data-aos="fade-up" data-aos-duration="900" data-aos-delay="0"
+  >
+    Задачи <span class="text-sm inline-block text-white bg-indigo-400 rounded-3xl px-2">{{ tasks.length }}</span>
+  </h1>
 
-  <div class="flex gap-x-4 justify-end-- text-sm">
+  <div class="flex gap-x-4 text-sm"
+  data-aos="fade-up" data-aos-duration="900" data-aos-delay="100"
+  >
     <label class="flex gap-x-2 uppercase font-semibold text-slate-400 cursor-pointer">
       <input type="radio" v-model="filters" value="">
       <span>Все</span>
@@ -29,12 +36,13 @@
 
   <div v-if="tasks.length" class="tasks">
 
-    <template v-for="task in tasks">
+    <template v-for="(task, index) in tasks">
       <TaskCard
       v-if="!filters || (filters === 'checked' && task.done === true) || (filters === 'unchecked' && !task.done)"
       :key="`task_${ task.id }`"
       class="my-4"
       :task="task"
+      data-aos="fade-up" data-aos-duration="900" data-aos-offset="0" :data-aos-delay="100 * (index + 2)"
       />
     </template>
   </div>
@@ -72,6 +80,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

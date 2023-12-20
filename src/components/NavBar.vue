@@ -1,14 +1,20 @@
 <template>
-  <header class="">
+  <header
+  data-aos="fade-down" data-aos-duration="900" data-aos-delay="200"
+  >
     <nav class="container px-4 max-w-screen-sm mx-auto flex items-center gap-x-6 mb-6">
 
-      <RouterLink to="/" class="font-extrabold text-lg py-3 inline-block text-sky-500"><span class="text-sky-900">2</span>DO</RouterLink>
+      <RouterLink
+      to="/" class="font-extrabold text-lg py-3 inline-block text-sky-500"
+      >
+        <span class="text-sky-900">2</span>DO
+      </RouterLink>
 
       <div class="gap-x-6 flex items-center ms-auto">
 
         <RouterLink to="/tasks" class="text-link font-bold text-sm py-3 inline-block">Задачи</RouterLink>
 
-        <RouterLink to="/stats" class="text-link font-bold text-sm py-3 inline-block">Статистика</RouterLink>
+        <RouterLink to="/stats" class="text-link font-bold text-sm py-3 inline-block">Статистика TVL</RouterLink>
 
         <RouterLink to="/new" class="bg-indigo-600 rounded px-2 font-extrabold text-2xl py-2 inline-block text-white flex items-center" title="создать задачу">
           <PlusIcon class="icon" />

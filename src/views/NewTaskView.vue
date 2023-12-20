@@ -1,5 +1,7 @@
 <template>
-  <form class="new-note grid gap-6 bg-white px-4 py-6 shadow-lg rounded-2xl">
+  <form class="new-note grid gap-6 bg-white px-4 py-6 shadow-lg rounded-2xl"
+  data-aos="fade-up" data-aos-duration="900" data-aos-offset="0"
+  >
     <input
     ref="title"
     v-model="newTask.title"
