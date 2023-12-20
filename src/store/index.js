@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import Tasks from './modules/tasks.js'
+import Stats from './modules/stats.js'
 
 export default createStore({
   state: {},
@@ -12,5 +13,6 @@ export default createStore({
 
   modules: {
     Tasks,
+    Stats,
   },
 })

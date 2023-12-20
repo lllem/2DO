@@ -1,11 +1,30 @@
+import axios from 'axios'
+
 export const Stats = {
-  state: {},
+  state: {
+    stats: [],
+  },
 
-  mutations: {},
+  mutations: {
+    UPDATE_STATS (state, payload) {
+      state.stats = payload
+    },
+  },
 
-  actions: {},
+  actions: {
+    async loadstats() {
+      await axios
+        .get('https://research-api.toscale.io/research/list-blockchains')
+        .then(response => {
+          this.commit('UPDATE_STATS', response.data)
+        })
+        .catch(error => console.log(error))
+    },
+  },
 
-  getters: {},
+  getters: {
+    stats: state => state.stats,
+  },
 }
 
 export default Stats
