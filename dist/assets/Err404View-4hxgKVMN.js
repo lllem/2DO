@@ -1,0 +1,1 @@
+import{_ as e,o as s,c,a as o}from"./index-0b7FyqAT.js";const t={},r={class:""},_=o("h1",null,"Err404View",-1),n=[_];function a(i,d){return s(),c("div",r,n)}const f=e(t,[["render",a]]);export{f as default};
