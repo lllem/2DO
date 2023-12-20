@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>Stats</h1>
+  <div class="">
+    <h1>Err404View</h1>
   </div>
 </template>
 

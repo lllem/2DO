@@ -3,15 +3,22 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-    </nav>
-  </header>
+  <NavBar/>
 
-  <RouterView />
+  <main>
+    <RouterView class="container max-w-screen-sm mx-auto" />
+  </main>
 </template>
+
+<script>
+import NavBar from '@/components/NavBar.vue'
+
+export default {
+  components: {
+    NavBar,
+  },
+}
+</script>
 
 <style lang="scss">
 </style>
