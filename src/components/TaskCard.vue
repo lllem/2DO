@@ -43,7 +43,7 @@ export default {
         const task = {}
         task.id = this.task.id
         task.done = value
-        this.$store.dispatch('updateTaskDone', task)
+        this.$store.dispatch('updateTask', task)
       },
 
       get() {

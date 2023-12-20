@@ -16,7 +16,7 @@
 
     <footer class="flex justify-center gap-x-6">
 
-      <button v-if="newTask.title || newTask.description" @click.prevent="save" class="bg-indigo-600 rounded px-3 font-bold text-xl py-2 inline-block text-white flex items-center"><CheckIcon class="icon me-2" /><span class="text-sm uppercase">Сохранить</span></button>
+      <button @click.prevent="save" class="bg-indigo-600 rounded px-3 font-bold text-xl py-2 inline-block text-white flex items-center"><CheckIcon class="icon me-2" /><span class="text-sm uppercase">Сохранить</span></button>
 
       <button v-if="draft.title || draft.description" @click="clear" class="rounded px-3 font-bold text-xl py-2 inline-block flex items-center text-indigo-400"><TrashIcon class="icon me-2" /><span class="text-sm uppercase">Удалить</span></button>
 

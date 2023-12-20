@@ -25,20 +25,20 @@ const router = createRouter({
     {
       path: '/tasks',
       name: 'tasks',
-      // component: () => import('../views/TasksView.vue'),
       children: [
         {
           path: '',
-          name: 'tasks1',
+          name: 'tasksAll',
           component: () => import('../views/TasksAllView.vue')
         },
 
         {
           path: '/tasks/:id',
-          name: 'task',
+          name: 'taskView',
           props: true,
-          component: () => import('../views/TaskView.vue')
+          component: () => import('../views/TaskView.vue'),
         },
+
       ],
 
     },

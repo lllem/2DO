@@ -34,17 +34,33 @@ export default createStore({
   },
 
   mutations: {
-    UPDATE_TASK_DONE (state, payload) {
-      const selectedTask = state.tasks.filter( task => task.id === payload.id )
-      selectedTask[0].done = payload.done
+    UPDATE_TASK (state, payload) {
+      let i // индекс элемента в массиве
+
+      state.tasks.find( (el, index) => {
+        if (el.id == payload.id) {
+          i = index
+          return true
+        }
+        return false
+      })
+
+      for (var variable in payload) {
+        state.tasks[i][variable] = payload[variable]
+      }
     },
 
     UPDATE_DRAFT (state, payload) {
-
-      console.log()
-      // state.draft.id = payload.id
       state.draft.title = payload.title
       state.draft.description = payload.description
+    },
+
+    DELETE_TASK (state, id) {
+      for (let i = 0; i < state.tasks.length; i++) {
+        if (state.tasks[i].id == id) {
+          state.tasks.splice(i, 1)
+        }
+      }
     },
 
     CLEAR_DRAFT (state) {
@@ -59,6 +75,7 @@ export default createStore({
       for (var variable in state.draft) {
         newTask[variable] = state.draft[variable]
       }
+
       newTask.id = Date.now()
       newTask.id = Date.now()
       state.tasks.push(newTask)
@@ -68,19 +85,23 @@ export default createStore({
   },
 
   actions: {
-    updateTaskDone(store, task) {
-      this.commit('UPDATE_TASK_DONE', task)
+    updateTask(store, task) {
+      this.commit('UPDATE_TASK', task)
+    },
+
+    deleteTask(store, id) {
+      this.commit('DELETE_TASK', id)
     },
 
     updateDraft(store, draft) {
       this.commit('UPDATE_DRAFT', draft)
     },
 
-    clearDraft(store) {
+    clearDraft() {
       this.commit('CLEAR_DRAFT')
     },
 
-    saveDraft(store) {
+    saveDraft() {
       this.commit('SAVE_DRAFT')
     },
   },
@@ -90,7 +111,7 @@ export default createStore({
 
     // Задача по id
     taskById: state => (id) => {
-      const item = state.tasks.find(task => task.id === id);
+      const item = state.tasks.find(task => task.id == id);
       return item;
     },
 
