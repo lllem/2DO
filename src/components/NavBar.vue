@@ -1,6 +1,6 @@
 <template>
   <header class="">
-    <nav class="container max-w-screen-sm mx-auto flex items-center gap-x-6">
+    <nav class="container px-4 max-w-screen-sm mx-auto flex items-center gap-x-6 mb-6">
 
       <RouterLink to="/" class="font-extrabold text-lg py-3 inline-block text-sky-500"><span class="text-sky-900">2</span>DO</RouterLink>
 

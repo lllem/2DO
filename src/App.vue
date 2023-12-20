@@ -5,8 +5,8 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <NavBar/>
 
-  <main>
-    <RouterView class="container max-w-screen-sm mx-auto" />
+  <main class="container px-4 mx-auto max-w-screen-sm">
+    <RouterView />
   </main>
 </template>
 

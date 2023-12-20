@@ -3,6 +3,12 @@
     <h1 class="font-bold text-2xl text-center my-6">Задачи</h1>
 
     <TaskCard
+    v-if="draft.title || draft.description"
+    :task="draft"
+    :draft="true"
+    />
+
+    <TaskCard
     v-for="task in tasks"
     :key="`task_${ task.id }`"
     class="my-4"
@@ -23,6 +29,7 @@ export default {
   computed: {
     ...mapGetters([
       'tasks',
+      'draft',
     ]),
   },
 }

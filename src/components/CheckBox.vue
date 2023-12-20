@@ -49,10 +49,5 @@ export default {
   height: 1em;
   user-select: none;
   line-height: 1em;
-
-  & * {
-    // float: left;
-    // font-size: 0.75em;
-  }
 }
 </style>
